@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>user-details</title>
+</head>
+<body>
+<script>
+
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then((res) => res.json())
+        .then((users) => {
+            for (const user of users){
+                let divInfo = document.createElement('div')
+                console.log(user)
+                document.body.appendChild(divInfo)
+                let h4 = document.createElement('h4')
+                h4.innerText = user.email
+                let h5 = document.createElement('h5')
+                h5.innerText = user.id
+                let h1 = document.createElement('h1')
+                h1.innerText = user.name
+                let h6 = document.createElement('h6')
+                h6.innerText = user.phone
+                let h3 = document.createElement('h3')
+                h3.innerText = user.username
+                let h2 = document.createElement('h2')
+                h2.innerText = user.website
+                let p = document.createElement('p')
+                let span = document.createElement('span')
+
+                divInfo.append(h4,h5,h1,h6,h3,h2,p,span)
+            }
+        });
+</script>
+
+</body>
+</html>
